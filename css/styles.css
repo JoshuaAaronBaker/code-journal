@@ -1,0 +1,54 @@
+.header-background {
+  background-color: #552b81;
+}
+
+.header-text {
+  color: white;
+  font-family: Raleway, sans-serif;
+}
+
+.main-background {
+  background-color: #f0f0f0;
+}
+
+h1,
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+}
+
+img {
+  width: 100%;
+}
+
+.form-font {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+}
+
+label,
+input {
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  resize: none;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.btn {
+  background-color: #552b81;
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  margin-top: 1rem;
+}
+
+.margin {
+  margin: 10px;
+}

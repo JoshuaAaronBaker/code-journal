@@ -15,15 +15,41 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <div class="container">
-    <div data-view="entry-form">
-
+<body class="main-background">
+  <header class="header-background">
+    <div class="container">
+      <div class="row">
+        <div class="column-full header-text">
+          <h2>Code Journal</h2>
+        </div>
+      </div>
     </div>
-  </div>
-  <header>
   </header>
   <main>
+    <div class="container">
+      <div class="row">
+        <div class="column-half">
+          <h1>New Entry</h1>
+          <img src="images/placeholder-image-square.jpg" alt="placeholder">
+        </div>
+      </div>
+      <div data-view="entry-form">
+        <form id="inputs" class="form-font">
+          <label for="title">Title</label>
+          <input type="text" id="title" placeholder="" required>
+
+          <label for="photo-url">Photo URL</label>
+          <input type="url" id="photo-url" placeholder="" required>
+
+          <label for="notes">Notes</label>
+          <textarea name="notes" id="notes" rows="8" cols="33"></textarea>
+        </form>
+      </div>
+    </div>
+    <div class="row flex-end margin">
+      <label for="save"></label>
+      <button id="save" class="btn" type="submit">SAVE</button>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
