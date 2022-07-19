@@ -84,6 +84,6 @@ textarea:focus {
   border-radius: 5px;
   padding: 10px 15px;
   margin-top: 15px;
-  margin-right: 15px;
+  margin-right: 2px;
   font-family: "Open Sans", sans-serif;
 }
