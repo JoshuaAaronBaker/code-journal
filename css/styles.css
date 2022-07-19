@@ -4,7 +4,7 @@
 
 .header-text {
   color: white;
-  font-family: Raleway, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .main-background {
@@ -25,7 +25,7 @@ h2 {
 img {
   max-width: 100%;
   object-fit: cover;
-  max-height: auto;
+  max-height: 350px;
 }
 
 .form-font {
