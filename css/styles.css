@@ -17,8 +17,15 @@ h2 {
   font-size: 1.2rem;
 }
 
+.header-text-margin {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 img {
-  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  max-height: auto;
 }
 
 .form-font {
@@ -31,24 +38,52 @@ input {
   display: block;
 }
 
+label {
+  font-family: "Open Sans", sans-serif;
+  line-height: 25px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#title,
+#notes,
+#photo-url {
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #b6b6b6;
+}
+
 input,
 textarea {
   width: 100%;
   resize: none;
 }
 
-.flex-end {
-  justify-content: flex-end;
+input:focus {
+  outline-color: #562a81;
+}
+
+textarea:focus {
+  outline-color: #562a81;
+}
+
+.column-half input {
+  width: 100%;
+  line-height: 25px;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn {
   background-color: #552b81;
   color: white;
   border: none;
-  border-radius: 0.2rem;
-  margin-top: 1rem;
-}
-
-.margin {
-  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+  font-family: "Open Sans", sans-serif;
 }
