@@ -24,3 +24,40 @@ function saveEntry(event) {
 }
 
 $formInputs.addEventListener('submit', saveEntry);
+
+function renderEntry(entry) {
+  var $listItem = document.createElement('li');
+  $listItem.setAttribute('data-entry-id', entry.entryId);
+
+  var $row = document.createElement('div');
+  $row.setAttribute('class', 'row');
+  $listItem.appendChild($row);
+
+  var $colHalfImg = document.createElement('div');
+  $colHalfImg.setAttribute('class', 'column-half');
+  $row.appendChild($colHalfImg);
+
+  var $img = document.createElement('img');
+  $img.setAttribute('src', entry.photoUrl);
+  $colHalfImg.appendChild($img);
+
+  var $colHalfEntry = document.createElement('div');
+  $colHalfEntry.setAttribute('class', 'column-half');
+  $row.appendChild($colHalfEntry);
+
+  var $entryH2 = document.createElement('h2');
+  $entryH2.textContent = entry.title;
+  $colHalfEntry.appendChild($entryH2);
+
+}
+
+var $ul = document.querySelector('ul');
+
+function addEntry(entry) {
+  for (var i = 0; i < data.entries.length; i++) {
+    var totalEntries = renderEntry(data.entries[i]);
+    $ul.appendChild(totalEntries);
+  }
+
+}
+window.addEventListener('DOMContentLoaded', addEntry);
