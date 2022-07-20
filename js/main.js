@@ -35,11 +35,11 @@ function renderEntry(entry) {
   $listItem.setAttribute('data-entry-id', entry.entryId);
 
   var $row = document.createElement('div');
-  $row.setAttribute('class', 'row');
+  $row.setAttribute('class', 'row margin-bottom50');
   $listItem.appendChild($row);
 
   var $colHalfImg = document.createElement('div');
-  $colHalfImg.setAttribute('class', 'column-half');
+  $colHalfImg.setAttribute('class', 'column-half center');
   $row.appendChild($colHalfImg);
 
   var $img = document.createElement('img');

@@ -116,6 +116,19 @@ ul {
   padding: 0;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-bottom30 {
+  margin-bottom: 30px;
+}
+
+.margin-bottom50 {
+  margin-bottom: 50px;
+}
+
 p {
   font-family: "Open Sans", sans-serif;
 }
