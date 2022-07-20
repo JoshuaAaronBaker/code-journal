@@ -49,15 +49,15 @@ function renderEntry(entry) {
   $entryH2.textContent = entry.title;
   $colHalfEntry.appendChild($entryH2);
 
+  return $listItem;
 }
 
 var $ul = document.querySelector('ul');
 
-function addEntry(entry) {
+function handleDomContent(event) {
   for (var i = 0; i < data.entries.length; i++) {
-    var totalEntries = renderEntry(data.entries[i]);
-    $ul.appendChild(totalEntries);
+    var newEntry = renderEntry(data.entries[i]);
+    $ul.append(newEntry);
   }
-
 }
-window.addEventListener('DOMContentLoaded', addEntry);
+window.addEventListener('DOMContentLoaded', handleDomContent);
