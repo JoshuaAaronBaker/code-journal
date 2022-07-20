@@ -95,6 +95,11 @@ textarea:focus {
   justify-content: space-between;
 }
 
+.center-button-and-entries {
+  display: flex;
+  align-items: center;
+}
+
 .btn {
   background-color: #552b81;
   color: white;

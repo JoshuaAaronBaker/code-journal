@@ -4,6 +4,7 @@ var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $formInputs = document.getElementById('inputs');
 var $ul = document.querySelector('ul');
+var $noEntriesText = document.querySelector('.no-entries-text');
 
 function updateImgSrc(event) {
   $image.setAttribute('src', event.target.value);
@@ -24,6 +25,7 @@ function handleSubmit(event) {
   $formInputs.reset();
   data.view = 'entries';
   $ul.prepend(renderEntry(entryData));
+  $noEntriesText.className = 'hidden';
   swapViews();
   $formInputs.reset();
 }
@@ -60,8 +62,6 @@ function renderEntry(entry) {
 
   return $listItem;
 }
-
-var $noEntriesText = document.querySelector('.no-entries-text');
 
 function handleDomContent(event) {
   for (var i = 0; i < data.entries.length; i++) {
