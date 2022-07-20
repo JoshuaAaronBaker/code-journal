@@ -64,10 +64,11 @@ function renderEntry(entry) {
 }
 
 function handleDomContent(event) {
+  $noEntriesText.className = 'hidden';
+  swapViews(event);
   for (var i = 0; i < data.entries.length; i++) {
     var newEntry = renderEntry(data.entries[i]);
     $ul.append(newEntry);
-    $noEntriesText.className = 'hidden';
   }
 }
 window.addEventListener('DOMContentLoaded', handleDomContent);
