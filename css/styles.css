@@ -5,6 +5,24 @@
 .header-text {
   color: white;
   font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  margin-right: 20px;
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+a:visited {
+  color: white;
+}
+
+.header-anchor {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 .main-background {
