@@ -23,7 +23,7 @@
       <div class="row">
         <div class="column-full align-items-center">
           <h3 class="header-text">Code Journal</h3>
-          <nav class="tabs"><a href="#" data-link="entries" class="header-anchor">Entries</a></nav>
+          <nav class="tabs"><a href="#" data-link="entries" class="header-entries">Entries</a></nav>
         </div>
       </div>
     </div>
@@ -52,20 +52,20 @@
               <textarea id="notes" name="notes" rows="8" cols="33" required></textarea>
               <div class="space-between">
                 <label for="button"></label>
-                <button class="btn">SAVE</button>
+                <button class="btn" id="save-btn" type="submit">SAVE</button>
               </div>
             </div>
           </div>
         </form>
       </div>
-      <div data-view="entries">
+      <div data-view="entries" class="entries hidden">
         <div class="row">
           <div class="column-full space-between">
             <h1 class="entries-style">Entries</h1>
             <button class="btn" id="new-btn" type="submit">NEW</button>
           </div>
         </div>
-        <div class="row">
+        <div class="row no-entries-text">
           <div class="column-full center-text">
             <p>No entries have been recorded.</p>
           </div>
