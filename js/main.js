@@ -100,3 +100,4 @@ function swapViewToForm(event) {
 $newButton.addEventListener('click', swapViewToForm);
 
 window.addEventListener('load', swapViews(event));
+// end issue 2
