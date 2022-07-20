@@ -56,6 +56,10 @@ function renderEntry(entry) {
   $entryH2.textContent = entry.title;
   $colHalfEntry.appendChild($entryH2);
 
+  var $editIcon = document.createElement('i');
+  $editIcon.className = 'fa-solid fa-pen';
+  $entryH2.appendChild($editIcon);
+
   var $entryP = document.createElement('p');
   $entryP.textContent = entry.notes;
   $colHalfEntry.appendChild($entryP);
