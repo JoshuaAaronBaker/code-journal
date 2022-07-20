@@ -5,6 +5,24 @@
 .header-text {
   color: white;
   font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  margin-right: 20px;
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+a:visited {
+  color: white;
+}
+
+.header-entries {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 .main-background {
@@ -77,6 +95,11 @@ textarea:focus {
   justify-content: space-between;
 }
 
+.center-button-and-entries {
+  display: flex;
+  align-items: center;
+}
+
 .btn {
   background-color: #552b81;
   color: white;
@@ -87,3 +110,32 @@ textarea:focus {
   margin-right: 2px;
   font-family: "Open Sans", sans-serif;
 }
+
+.center-text {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-bottom30 {
+  margin-bottom: 30px;
+}
+
+.margin-bottom50 {
+  margin-bottom: 50px;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* end issue 2 */
