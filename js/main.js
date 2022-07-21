@@ -12,22 +12,36 @@ function updateImgSrc(event) {
 $photoUrl.addEventListener('input', updateImgSrc);
 
 function handleSubmit(event) {
+
   event.preventDefault();
+
   var entryData = {
     title: $title.value,
     photoUrl: $photoUrl.value,
     notes: $notes.value
   };
-  entryData.entryId = data.nextEntryId;
-  data.nextEntryId++;
-  data.entries.unshift(entryData);
+
+  if (data.editing !== null) {
+    entryData.entryId = data.editing.entryId;
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.editing.entryId === data.entries[i].entryId) {
+        data.entries[i] = entryData;
+        $ul.children[i].replaceWith(renderEntry(entryData));
+        swapViewToEntries();
+      }
+    }
+  } else {
+    entryData.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    data.entries.unshift(entryData);
+    $ul.prepend(renderEntry(entryData));
+    swapViews();
+  }
+
   $image.setAttribute('src', '/images/placeholder-image-square.jpg');
   $formInputs.reset();
   data.view = 'entries';
-  $ul.prepend(renderEntry(entryData));
-  $noEntriesText.className = 'hidden';
   swapViews();
-  $formInputs.reset();
 }
 
 $formInputs.addEventListener('submit', handleSubmit);
@@ -53,18 +67,24 @@ function renderEntry(entry) {
   $row.appendChild($colHalfEntry);
 
   var $entryH2 = document.createElement('h2');
+  $entryH2.setAttribute('class', 'space-between');
   $entryH2.textContent = entry.title;
   $colHalfEntry.appendChild($entryH2);
+
+  var $editIcon = document.createElement('i');
+  $editIcon.className = 'fa-solid fa-pen';
+  $entryH2.appendChild($editIcon);
 
   var $entryP = document.createElement('p');
   $entryP.textContent = entry.notes;
   $colHalfEntry.appendChild($entryP);
 
+  $noEntriesText.className = 'hidden';
+
   return $listItem;
 }
 
 function handleDomContent(event) {
-  $noEntriesText.className = 'hidden';
   swapViews();
   for (var i = 0; i < data.entries.length; i++) {
     var newEntry = renderEntry(data.entries[i]);
@@ -95,10 +115,37 @@ function swapViewToEntries(event) {
 $headerEntries.addEventListener('click', swapViewToEntries);
 
 function swapViewToForm(event) {
+  // data.editing = null;
   data.view = 'entry-form';
   swapViews();
+  $image.setAttribute('src', '/images/placeholder-image-square.jpg');
+  $formInputs.reset();
 }
 $newButton.addEventListener('click', swapViewToForm);
 
-window.addEventListener('load', swapViews(event));
 // end issue 2
+var $entryHeader = document.querySelector('.entry-header');
+
+function clickEditIcon(event) {
+  if (event.target && event.target.tagName === 'I') {
+    var closestEntryView = event.target.closest('li');
+    var entryIdNumber = closestEntryView.getAttribute('data-entry-id');
+    $entryForm.setAttribute('class', 'view');
+    $entries.setAttribute('class', 'hidden');
+    swapViews();
+    data.view = ('entry-form');
+  }
+
+  for (var i = 0; i < data.entries.length; i++) {
+    if (Number(entryIdNumber) === data.entries[i].entryId) {
+      data.editing = data.entries[i];
+      $title.value = data.editing.title;
+      $notes.value = data.editing.notes;
+      $photoUrl.value = data.editing.photoUrl;
+      $image.setAttribute('src', data.editing.photoUrl);
+      swapViews();
+    }
+  }
+  $entryHeader.textContent = 'Edit Entry';
+}
+$ul.addEventListener('click', clickEditIcon);
