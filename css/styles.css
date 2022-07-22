@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+a {
+  font-family: "Open Sans", sans-serif;
+}
+
 a:visited {
   color: white;
 }
@@ -151,6 +155,7 @@ i {
 }
 
 .modal-message {
+  font-family: "Open Sans", sans-serif;
   font-size: 15px;
   margin-bottom: 30px;
 }
