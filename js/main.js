@@ -115,7 +115,6 @@ function swapViewToEntries(event) {
 $headerEntries.addEventListener('click', swapViewToEntries);
 
 function swapViewToForm(event) {
-  // data.editing = null;
   data.view = 'entry-form';
   swapViews();
   $image.setAttribute('src', '/images/placeholder-image-square.jpg');
@@ -123,7 +122,6 @@ function swapViewToForm(event) {
 }
 $newButton.addEventListener('click', swapViewToForm);
 
-// end issue 2
 var $entryHeader = document.querySelector('.entry-header');
 
 function clickEditIcon(event) {
@@ -149,3 +147,39 @@ function clickEditIcon(event) {
   $entryHeader.textContent = 'Edit Entry';
 }
 $ul.addEventListener('click', clickEditIcon);
+
+var $delete = document.getElementById('delete');
+var $toggleModal = document.getElementById('toggle-modal');
+
+function handleDelete(event) {
+  if (event.target.className === 'delete-btn');
+  $toggleModal.setAttribute('class', 'view');
+}
+
+$delete.addEventListener('click', handleDelete);
+
+var $cancelButton = document.getElementById('cancel');
+
+function handleCancel(event) {
+  if (event.target.className === 'cancel-btn') {
+    $toggleModal.setAttribute('class', 'hidden');
+  }
+}
+$cancelButton.addEventListener('click', handleCancel);
+
+var $confirmButton = document.getElementById('confirm');
+
+function handleConfirm(event) {
+  if (event.target.className === 'confirm-btn') {
+    for (var d = 0; d < data.entries.length; d++) {
+      if (data.entries[d] === data.editing) {
+        data.entries.splice(d, 1);
+        $ul.children[d].remove();
+        $toggleModal.setAttribute('class', 'hidden');
+        data.views = 'entries';
+        swapViewToEntries();
+      }
+    }
+  }
+}
+$confirmButton.addEventListener('click', handleConfirm);

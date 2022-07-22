@@ -50,8 +50,8 @@
             <div class="column-full">
               <label for="notes">Notes</label>
               <textarea id="notes" name="notes" rows="8" cols="33" required></textarea>
-              <div class="space-between">
-                <label for="button"></label>
+              <div class="space-between center-button-and-entries">
+                <a href="#" id="delete" class="delete-btn">DELETE ENTRY</a>
                 <button class="btn" id="save-btn" type="submit">SAVE</button>
               </div>
             </div>
@@ -73,6 +73,19 @@
         <ul>
 
         </ul>
+      </div>
+    </div>
+    <div id="toggle-modal" class="hidden">
+      <div class="modal">
+        <div class="pop-up">
+          <h2 class="modal-message">
+            Are you sure you want to delete this entry?
+          </h2>
+          <div class="options">
+            <button id="cancel" class="cancel-btn">CANCEL</button>
+            <button id="confirm" class="confirm-btn">CONFIRM</button>
+          </div>
+        </div>
       </div>
     </div>
   </main>
